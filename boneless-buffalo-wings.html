@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Recipes">
+<meta name="theme-color" content="#b4532a">
+<title>Boneless Buffalo Wings (Applebee&#x27;s Copycat) · Family Recipes</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{--bg:#fbfaf7;--card:#ffffff;--ink:#1f1d1a;--muted:#6b665e;--line:#e6e1d8;--accent:#b4532a;--accent-bg:#f8e9e1;--flag-bg:#fdf1d8;--flag-ink:#7a4d05;--done:#a8a39a;--chip:#f1ede6}
+@media (prefers-color-scheme:dark){:root{--bg:#171513;--card:#211e1b;--ink:#f1ede6;--muted:#a8a197;--line:#35312c;--accent:#e98a5f;--accent-bg:#3a271e;--flag-bg:#3a2f17;--flag-ink:#f2cd7f;--done:#6b665e;--chip:#2b2723}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 18px 60px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+h1{font-size:28px;line-height:1.2;margin:0;font-weight:650}
+h2{font-size:21px;margin:0 0 10px;font-weight:650}
+h3{font-size:16px;margin:16px 0 6px;color:var(--muted);font-weight:600;text-transform:none}
+.btn{font:inherit;font-size:16px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.search{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:6px 0 12px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{font:inherit;font-size:15px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.card:active{transform:scale(.99)}
+.card .t{font-size:18px;font-weight:600;line-height:1.3}
+.card .m{font-size:14px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--flag-bg);color:var(--flag-ink);margin-top:6px}
+.sec-h{font-size:15px;color:var(--muted);margin:22px 0 8px;font-weight:600}
+.back{display:inline-block;font-size:16px;margin-bottom:8px;text-decoration:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:15px;margin:8px 0 4px}
+.meta b{color:var(--ink);font-weight:600}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+.cols{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:28px;align-items:start}
+@media (max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+ul.ing{list-style:none;margin:0;padding:0}
+ul.ing li{padding:7px 0;border-bottom:1px solid var(--line)}
+ul.ing li:last-child{border-bottom:0}
+ul.ing label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+ul.ing input{width:22px;height:22px;margin:3px 0 0;flex:none;accent-color:var(--accent)}
+ul.ing li.done span{color:var(--done);text-decoration:line-through}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:10px 10px 10px 48px;border-radius:10px;cursor:pointer;margin-bottom:4px}
+ol.steps li::before{content:counter(s);position:absolute;left:8px;top:10px;width:30px;height:30px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+ol.steps li.cur{background:var(--accent-bg)}
+ol.steps li.cur::before{background:var(--accent);color:#fff}
+ol.steps li.past{color:var(--done)}
+.flag{background:var(--flag-bg);color:var(--flag-ink);border-radius:5px;padding:0 5px;font-size:.92em}
+.extra{margin-top:22px}
+.extra ul{margin:0;padding-left:20px}
+.extra li{margin-bottom:6px}
+.src{font-size:15px;color:var(--muted);margin-top:18px;word-break:break-word}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:15px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+.empty{color:var(--muted);padding:20px 0}
+footer{color:var(--muted);font-size:13px;margin-top:40px}
+@media print{.tools,.back,.btn{display:none}body{background:#fff;color:#000}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Boneless Buffalo Wings (Applebee's Copycat)", "recipeCategory": "Appetizer", "recipeCuisine": "American", "keywords": "chicken, deep-fried, copycat, game-day, family-favorite", "recipeIngredient": ["2 lb chicken breast", "Blue cheese dressing", "Gorgonzola cheese, crumbled", "Celery stalks", "Oil for deep frying", "3 cups water", "1/4 cup salt", "1/4 cup sugar", "Ice cubes (to cool the brine quickly)", "2 cups flour", "1/4 cup cornstarch", "1 tbsp seasoned salt", "1 tbsp paprika", "1 tsp chili powder", "1 tsp salt", "1/4 tsp ground cumin", "1/4 tsp black pepper", "1/2 cup milk", "1 egg", "1/2 cup water", "1.5 cups Frank's RedHot", "6 tbsp butter", "1 tbsp Worcestershire sauce", "1/4 tsp garlic powder", "1 tsp cayenne", "1 tsp cornstarch"], "recipeInstructions": [{"@type": "HowToStep", "text": "Cut the chicken into about 1-inch cubes. Soak in the brine in the refrigerator for 6 hours."}, {"@type": "HowToStep", "text": "Set up two bowls: one with the combined dry mix, one with the whisked wet mix."}, {"@type": "HowToStep", "text": "Dredge the chicken in this order: flour, egg, flour, egg, flour (three flour coats). Lay the pieces on wax paper and freeze 30 minutes."}, {"@type": "HowToStep", "text": "Make the sauce: melt and combine the butter, hot sauce, Worcestershire, garlic powder and cayenne in a small pot. Stir in the cornstarch last."}, {"@type": "HowToStep", "text": "Make the dip: stir Gorgonzola chunks into the blue cheese dressing."}, {"@type": "HowToStep", "text": "Fry the chicken at 350°F for 4 minutes. Right before serving, fry again for 2 minutes."}, {"@type": "HowToStep", "text": "Toss in a large bowl with the hot sauce until coated. Serve with celery and the blue cheese dip."}], "recipeYield": "about 2 lb chicken (serving = 10 wings)", "author": {"@type": "Person", "name": "HellthyJunkFood"}}</script>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="./">&larr; All recipes</a>
+<h1>Boneless Buffalo Wings (Applebee's Copycat)</h1>
+<div class="meta"><span>Serves <b>about 2 lb chicken (serving = 10 wings)</b></span><span>Prep <b>10 min</b></span><span>Cook <b>6 min frying</b></span><span>Total <b>about 7 hr (6 hr brine + 30 min freeze)</b></span></div>
+
+<div class="tools">
+  <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
+  <button class="btn" type="button" onclick='shareThis("Boneless Buffalo Wings (Applebee's Copycat)")'>Share recipe</button>
+  <button class="btn" type="button" id="reset">Clear checks</button>
+</div>
+<div class="cols">
+  <div class="panel"><h2>Ingredients</h2><h3>Chicken &amp; Serving</h3><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>2 lb chicken breast</span></label></li><li><label><input type="checkbox" data-i="1"><span>Blue cheese dressing</span></label></li><li><label><input type="checkbox" data-i="2"><span>Gorgonzola cheese, crumbled</span></label></li><li><label><input type="checkbox" data-i="3"><span>Celery stalks</span></label></li><li><label><input type="checkbox" data-i="4"><span>Oil for deep frying</span></label></li></ul><h3>Brine</h3><ul class="ing"><li><label><input type="checkbox" data-i="5"><span>3 cups water</span></label></li><li><label><input type="checkbox" data-i="6"><span>1/4 cup salt</span></label></li><li><label><input type="checkbox" data-i="7"><span>1/4 cup sugar</span></label></li><li><label><input type="checkbox" data-i="8"><span>Ice cubes (to cool the brine quickly)</span></label></li></ul><h3>Dry Mix</h3><ul class="ing"><li><label><input type="checkbox" data-i="9"><span>2 cups flour</span></label></li><li><label><input type="checkbox" data-i="10"><span>1/4 cup cornstarch</span></label></li><li><label><input type="checkbox" data-i="11"><span>1 tbsp seasoned salt</span></label></li><li><label><input type="checkbox" data-i="12"><span>1 tbsp paprika</span></label></li><li><label><input type="checkbox" data-i="13"><span>1 tsp chili powder</span></label></li><li><label><input type="checkbox" data-i="14"><span>1 tsp salt</span></label></li><li><label><input type="checkbox" data-i="15"><span>1/4 tsp ground cumin</span></label></li><li><label><input type="checkbox" data-i="16"><span>1/4 tsp black pepper</span></label></li></ul><h3>Wet Mix</h3><ul class="ing"><li><label><input type="checkbox" data-i="17"><span>1/2 cup milk</span></label></li><li><label><input type="checkbox" data-i="18"><span>1 egg</span></label></li><li><label><input type="checkbox" data-i="19"><span>1/2 cup water</span></label></li></ul><h3>Hot Sauce</h3><ul class="ing"><li><label><input type="checkbox" data-i="20"><span>1.5 cups Frank's RedHot</span></label></li><li><label><input type="checkbox" data-i="21"><span>6 tbsp butter</span></label></li><li><label><input type="checkbox" data-i="22"><span>1 tbsp Worcestershire sauce</span></label></li><li><label><input type="checkbox" data-i="23"><span>1/4 tsp garlic powder</span></label></li><li><label><input type="checkbox" data-i="24"><span>1 tsp cayenne</span></label></li><li><label><input type="checkbox" data-i="25"><span>1 tsp cornstarch</span></label></li></ul></div>
+  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Cut the chicken into about 1-inch cubes. Soak in the brine in the refrigerator for 6 hours.</li><li>Set up two bowls: one with the combined dry mix, one with the whisked wet mix.</li><li>Dredge the chicken in this order: flour, egg, flour, egg, flour (three flour coats). Lay the pieces on wax paper and freeze 30 minutes.</li><li>Make the sauce: melt and combine the butter, hot sauce, Worcestershire, garlic powder and cayenne in a small pot. Stir in the cornstarch last.</li><li>Make the dip: stir Gorgonzola chunks into the blue cheese dressing.</li><li>Fry the chicken at 350°F for 4 minutes. Right before serving, fry again for 2 minutes.</li><li>Toss in a large bowl with the hot sauce until coated. Serve with celery and the blue cheese dip.</li></ol></div>
+</div>
+<div class="extra panel"><h2>Family history</h2><ul><li>Aaron used to make these for his parents. The last time was when they lived in the apartment in San Antonio.</li><li>Saved in the family Tradition Tracker notebook in December 2016.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>Nutrition per 10 wings: about 730 cal for this homemade version, compared with about 1030 cal for Applebee's restaurant version. The notebook copy labels the two panels.</li><li>The double fry (4 min, then 2 min just before serving) is what keeps them crisp.</li></ul></div>
+<div class="src">From: HellthyJunkFood · <a href="https://www.hellthyjunkfood.com/boneless-buffalo-wings" rel="noopener" target="_blank">View original recipe</a></div>
+<script>
+(function(){
+var key='recipe:boneless-buffalo-wings';
+function load(){try{return JSON.parse(localStorage.getItem(key))||{}}catch(e){return {}}}
+function save(s){try{localStorage.setItem(key,JSON.stringify(s))}catch(e){}}
+var st=load();st.c=st.c||{};
+var boxes=document.querySelectorAll('ul.ing input');
+boxes.forEach(function(b){var i=b.dataset.i;if(st.c[i]){b.checked=true;b.closest('li').classList.add('done')}
+ b.addEventListener('change',function(){b.closest('li').classList.toggle('done',b.checked);if(b.checked)st.c[i]=1;else delete st.c[i];save(st)})});
+var steps=Array.prototype.slice.call(document.querySelectorAll('ol.steps li'));
+function mark(n){steps.forEach(function(li,j){li.classList.toggle('cur',j===n);li.classList.toggle('past',n!=null&&j<n)})}
+if(typeof st.s==='number')mark(st.s);
+steps.forEach(function(li,j){li.addEventListener('click',function(){st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
+document.getElementById('reset').addEventListener('click',function(){st={c:{}};save(st);boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')});mark(null)});
+var wb=document.getElementById('wake'),lock=null;
+if('wakeLock' in navigator){wb.hidden=false;
+ wb.addEventListener('click',async function(){try{if(lock){await lock.release();lock=null;wb.classList.remove('on');wb.textContent='Keep screen on'}else{lock=await navigator.wakeLock.request('screen');wb.classList.add('on');wb.textContent='Screen stays on';lock.addEventListener('release',function(){lock=null;wb.classList.remove('on');wb.textContent='Keep screen on'})}}catch(e){toast('This device would not keep the screen on')}});
+ document.addEventListener('visibilitychange',async function(){if(document.visibilityState==='visible'&&wb.classList.contains('on')&&!lock){try{lock=await navigator.wakeLock.request('screen')}catch(e){}}});
+}
+})();
+</script>
+
+<footer>Family Recipes · Family use only</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
+function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+</script>
+</body>
+</html>
