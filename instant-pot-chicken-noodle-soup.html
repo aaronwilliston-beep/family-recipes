@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Instant Pot Chicken Noodle Soup")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Instant Pot Chicken Noodle Soup">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -84,7 +84,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Set the pot to Sauté (medium) and press Start. Add the oil, then the onion and carrots, and cook briefly to soften. Add the garlic and stir about a minute without letting it burn.</li><li>Cancel Sauté. Add the chicken and turn it in the hot pot to sear lightly.</li><li>Add the stock and water. Push everything under the liquid and scrape the bottom clean so you don't get a burn warning. Season with salt and pepper.</li><li>Seal and pressure cook on High for 20 minutes (Manual, or Meat/Stew adjusted to 20). Quick release.</li><li>Stir in the pasta. Pressure cook on High for half the package boil time, rounded up (9-minute pasta → 5 minutes). Quick release.</li><li>Shred the chicken right in the pot. It falls apart when you stir. Taste and adjust the seasoning.</li></ol></div>
 </div>
 <div class="extra panel"><h2>Family history</h2><ul><li>A regular in the house.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>Stock gives a deeper flavor than broth, but either works.</li><li>If the lid won't lock on the second cook, set the valve to Venting to close it, then switch back to Sealing before starting.</li><li>Keep the pasta modest because it swells. You can also cook it separately and add it per bowl.</li></ul></div>
-<div class="src">From: The Last Minute Cook (Debra) · <a href="https://www.youtube.com/watch?v=ajMIkNO8ECc" rel="noopener" target="_blank">View original recipe</a></div>
+<div class="src">From: The Last Minute Cook (Debra) · <a href="https://www.youtube.com/watch?v=ajMIkNO8ECc" rel="noopener" target="_blank">Watch the video</a></div>
 <script>
 (function(){
 var key='recipe:instant-pot-chicken-noodle-soup';
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>

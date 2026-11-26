@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Bread Machine Dinner Rolls")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Bread Machine Dinner Rolls">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>

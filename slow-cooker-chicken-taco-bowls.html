@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Slow Cooker Chicken Taco Bowls (High Protein Meal Prep)")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Slow Cooker Chicken Taco Bowls (High Protein Meal Prep)">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -84,7 +84,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Put the chicken, taco seasoning, enchilada sauce, corn, beans and salt in the slow cooker. Cook on high 2–3 hours or low 3–4 hours, until tender and cooked through.</li><li>Near the end, bring the rice and bone broth to a boil in a pot. Cover, reduce to low and simmer about 20 minutes. Rest 5 minutes covered, then fluff.</li><li>Shred the chicken in the slow cooker. Stir in the cooked rice and a handful of cilantro.</li><li>Blend all the sauce ingredients until smooth, adjusting seasoning and thickness with milk.</li><li>Divide into 10 containers, drizzle with sauce, and garnish with cilantro.</li></ol></div>
 </div>
 <div class="extra panel"><h2>Notes</h2><ul><li>Per serving, as stated by the source: 535 cal, 44 g protein, 64 g carbs, 10 g fat.</li><li>Storage: freeze for best results. To reheat, cover with a paper towel and microwave 3–4 min, stir (add a splash of water or broth if dry), then 1–2 min more.</li></ul></div>
-<div class="src">From: Stealth Health Life · <a href="https://www.youtube.com/shorts/L9nKZvzuWA4" rel="noopener" target="_blank">View original recipe</a></div>
+<div class="src">From: Stealth Health Life · <a href="https://www.youtube.com/shorts/L9nKZvzuWA4" rel="noopener" target="_blank">Watch the video</a></div>
 <script>
 (function(){
 var key='recipe:slow-cooker-chicken-taco-bowls';
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>

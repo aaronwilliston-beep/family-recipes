@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Instant Pot Beef Stroganoff")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Instant Pot Beef Stroganoff">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -84,7 +84,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Set the pot to Sauté and add the oil. Add the stew meat, season with garlic salt, salt and pepper, and sear 2–3 minutes.</li><li>Add the onion, garlic and mushrooms and sauté a few minutes.</li><li>Stir in the flour until it coats everything. Add the Worcestershire and 3 cups broth.</li><li>Turn off Sauté. Seal and cook on Manual/High for 12 minutes. Quick release.</li><li>Stir in the egg noodles. If it looks dry, add about 1/2 cup more broth.</li><li>Seal and cook on Manual/High for 4 minutes. Quick release.</li><li>Right away, while it's very hot, stir in the sour cream. If it's too thin, run Sauté a few minutes to thicken.</li></ol></div>
 </div>
 <div class="extra panel"><h2>Notes</h2><ul><li>The amounts follow what's shown in the video. The printed Instant Pot notes use 1½ cups broth and 3 tbsp flour, which gives a thicker sauce. If yours comes out soupy, try those amounts next time.</li><li>The printed slow-cooker version cooks 7–9 hr low or 4–5 hr high, adds flour whisked with apple juice plus the mushrooms for the last 30 minutes, and serves it over baked potatoes.</li></ul></div>
-<div class="src">From: Six Sisters' Stuff · <a href="https://www.youtube.com/watch?v=c7M6R18zg-Y" rel="noopener" target="_blank">View original recipe</a></div>
+<div class="src">From: Six Sisters' Stuff · <a href="https://www.youtube.com/watch?v=c7M6R18zg-Y" rel="noopener" target="_blank">Watch the video</a></div>
 <script>
 (function(){
 var key='recipe:instant-pot-beef-stroganoff';
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>

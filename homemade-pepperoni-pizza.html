@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Homemade Pepperoni Pizza (Crust + Sauce)")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Homemade Pepperoni Pizza (Crust + Sauce)">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -84,7 +84,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li><strong>Sauce:</strong> In a small saucepan, combine everything except the Parmesan. Heat over medium, stirring constantly, until bubbling. Take off the heat, stir in the Parmesan until melted, and cool before using.</li><li><strong>Crust:</strong> Stir the sugar into the warm water, sprinkle the yeast on top, and let it bloom about 10 minutes.</li><li>Add the salt, oil and flour and mix into a dough. It will be sticky. Knead about 1 minute by mixer or 2–3 minutes by hand, using as little extra flour as you can.</li><li>Put the dough in an oiled bowl, turn to coat, cover with a damp towel, and let it rise in a warm spot about 1 hour, until doubled.</li><li><strong>Assemble:</strong> Heat the oven to 500°F. Dust a 16" pizza pan with the cornmeal.</li><li>Without punching it down, turn the dough onto the pan and press it out to the edges with your fingertips, working from the center and leaving a slight rim.</li><li>Spread half the sauce to within about 3/4" of the edge. Add the cheese, then the pepperoni and any other toppings.</li><li>Bake about 7 minutes, until golden. Watch closely, because it can go from done to burnt in about a minute. Cut into 8 slices.</li></ol></div>
 </div>
 <div class="extra panel"><h2>Family history</h2><ul><li>Saved in the family Tradition Tracker notebook in February 2015.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>The extra half of the sauce is enough for a second pizza.</li></ul></div>
-<div class="src">From: Crouton Crackerjacks · <a href="https://www.youtube.com/watch?v=HCAPjIVOdJw" rel="noopener" target="_blank">View original recipe</a></div>
+<div class="src">From: Crouton Crackerjacks · <a href="https://www.youtube.com/watch?v=HCAPjIVOdJw" rel="noopener" target="_blank">Watch the video</a></div>
 <script>
 (function(){
 var key='recipe:homemade-pepperoni-pizza';
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>

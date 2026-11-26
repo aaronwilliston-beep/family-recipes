@@ -76,7 +76,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
-  <button class="btn" type="button" onclick='shareThis("Perfect Roast Chicken with Vegetables")'>Share recipe</button>
+  <button class="btn" type="button" data-share-title="Perfect Roast Chicken with Vegetables">Share recipe</button>
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
@@ -84,7 +84,7 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Heat the oven to 425°F.</li><li>Take out the giblets, rinse the bird inside and out, trim off excess fat and stray feathers, and pat the skin dry.</li><li>Season the cavity well with salt and pepper. Fill it with the whole bunch of thyme, both lemon halves and both garlic halves.</li><li>Brush the skin with the melted butter and season again with salt and pepper. Tie the legs together with kitchen string and tuck the wing tips underneath.</li><li>In the roasting pan, toss the onion, carrots and fennel with salt, pepper, the 20 thyme sprigs and a coating of olive oil. Spread them out and set the chicken on top.</li><li>Roast about 1½ hours, until the juices run clear when you cut between the leg and thigh.</li><li>Move the chicken and vegetables to a platter, tent with foil, and rest about 20 minutes. Carve and serve with the vegetables.</li></ol></div>
 </div>
 <div class="extra panel"><h2>Notes</h2><ul><li>Doneness check: the source uses "juices run clear." A thermometer reading of 165°F in the thickest part of the thigh is the more reliable test.</li></ul></div>
-<div class="src">From: Ina Garten (Barefoot Contessa) · <a href="https://www.youtube.com/watch?v=Ys7dyV97FXw" rel="noopener" target="_blank">View original recipe</a></div>
+<div class="src">From: Ina Garten (Barefoot Contessa) · <a href="https://www.youtube.com/watch?v=Ys7dyV97FXw" rel="noopener" target="_blank">Watch the video</a></div>
 <script>
 (function(){
 var key='recipe:perfect-roast-chicken';
@@ -112,7 +112,9 @@ if('wakeLock' in navigator){wb.hidden=false;
 <div class="toast" id="toast" role="status"></div>
 <script>
 function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
-function shareThis(title,url){url=url||location.href;if(navigator.share){navigator.share({title:title,url:url}).catch(function(){})}else if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')})}else{prompt('Copy this link',url)}}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
 </script>
 </body>
 </html>
