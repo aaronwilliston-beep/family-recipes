@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Recipes">
+<meta name="theme-color" content="#b4532a">
+<title>Guenevere&#x27;s Cinnamon Rolls · Williston Family Recipes</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{--bg:#fbfaf7;--card:#ffffff;--ink:#1f1d1a;--muted:#6b665e;--line:#e6e1d8;--accent:#b4532a;--accent-bg:#f8e9e1;--flag-bg:#fdf1d8;--flag-ink:#7a4d05;--done:#a8a39a;--chip:#f1ede6}
+@media (prefers-color-scheme:dark){:root{--bg:#171513;--card:#211e1b;--ink:#f1ede6;--muted:#a8a197;--line:#35312c;--accent:#e98a5f;--accent-bg:#3a271e;--flag-bg:#3a2f17;--flag-ink:#f2cd7f;--done:#6b665e;--chip:#2b2723}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 18px 60px}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+h1{font-size:28px;line-height:1.2;margin:0;font-weight:650}
+h2{font-size:21px;margin:0 0 10px;font-weight:650}
+h3{font-size:16px;margin:16px 0 6px;color:var(--muted);font-weight:600;text-transform:none}
+.btn{font:inherit;font-size:16px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.sbox{position:relative;margin:6px 0 12px}
+.search{width:100%;font:inherit;padding:12px 48px 12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:0;-webkit-appearance:none;appearance:none}
+.search::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
+.clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:var(--chip);color:var(--muted);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.clr[hidden]{display:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{font:inherit;font-size:15px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--ink);text-decoration:none}
+.card:active{transform:scale(.99)}
+.card .t{font-size:18px;font-weight:600;line-height:1.3}
+.card .m{font-size:14px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;font-size:12px;padding:2px 8px;border-radius:6px;background:var(--flag-bg);color:var(--flag-ink);margin-top:6px}
+.sec-h{font-size:15px;color:var(--muted);margin:22px 0 8px;font-weight:600}
+.back{display:inline-block;font-size:16px;margin-bottom:8px;text-decoration:none}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:15px;margin:8px 0 4px}
+.meta b{color:var(--ink);font-weight:600}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 18px}
+.cols{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:28px;align-items:start}
+@media (max-width:760px){.cols{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+ul.ing{list-style:none;margin:0;padding:0}
+ul.ing li{padding:7px 0;border-bottom:1px solid var(--line)}
+ul.ing li:last-child{border-bottom:0}
+ul.ing label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+ul.ing input{width:22px;height:22px;margin:3px 0 0;flex:none;accent-color:var(--accent)}
+ul.ing li.done span{color:var(--done);text-decoration:line-through}
+ol.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+ol.steps li{counter-increment:s;position:relative;padding:10px 10px 10px 48px;border-radius:10px;cursor:pointer;margin-bottom:4px}
+ol.steps li::before{content:counter(s);position:absolute;left:8px;top:10px;width:30px;height:30px;border-radius:50%;background:var(--chip);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600}
+ol.steps li.cur{background:var(--accent-bg)}
+ol.steps li.cur::before{background:var(--accent);color:#fff}
+ol.steps li.past{color:var(--done)}
+.flag{background:var(--flag-bg);color:var(--flag-ink);border-radius:5px;padding:0 5px;font-size:.92em}
+.extra{margin-top:22px}
+.extra ul{margin:0;padding-left:20px}
+.extra li{margin-bottom:6px}
+.src{font-size:15px;color:var(--muted);margin-top:18px;word-break:break-word}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:15px;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+.empty{color:var(--muted);padding:20px 0}
+footer{color:var(--muted);font-size:13px;margin-top:40px}
+@media print{.tools,.back,.btn{display:none}body{background:#fff;color:#000}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Guenevere's Cinnamon Rolls", "recipeCategory": "Breakfast", "recipeCuisine": "American", "keywords": "yeast, cinnamon rolls, cream cheese icing, freezer-friendly, family-favorite, gift", "recipeIngredient": ["8 cups flour", "4 1/2 tsp instant dry yeast", "1/2 cup warm water", "2 tbsp sugar", "2 cups cold milk", "1 small package instant vanilla pudding", "2 sticks unsalted butter, room temperature, cut into small cubes", "2 eggs", "1 tsp salt", "Olive oil, for the bowl", "2 cups brown sugar", "2 tbsp ground cinnamon", "1 stick butter, melted", "1 stick unsalted butter, room temperature", "8 oz cream cheese, room temperature", "1 tsp vanilla extract", "3 cups powdered sugar", "3 tbsp milk (as needed)"], "recipeInstructions": [{"@type": "HowToStep", "text": "Sift the 8 cups flour into a bowl. Cut the 2 sticks of room-temperature butter into small cubes."}, {"@type": "HowToStep", "text": "Yeast: stir the sugar into the warm water, add the yeast, and stir. Let it sit about 10 minutes."}, {"@type": "HowToStep", "text": "In a big bowl or stand mixer, mix the cold milk and vanilla pudding."}, {"@type": "HowToStep", "text": "Add the cubed butter, eggs and salt to the pudding and mix. Add the yeast mixture and mix."}, {"@type": "HowToStep", "text": "If using a stand mixer, switch to the dough hook. Add the flour 1 cup at a time, mixing in each cup. After the 8th cup, knead by hand or mix on medium until the dough clears the sides of the bowl, about 3–4 minutes."}, {"@type": "HowToStep", "text": "Form the dough into a ball. Coat the inside of a large bowl with olive oil, put the dough in, cover, and let it rise 1 hour or until doubled."}, {"@type": "HowToStep", "text": "Punch down, cover, and let it rise again for 30 minutes."}, {"@type": "HowToStep", "text": "Butter the pans: a 9x13 plus whatever smaller pans you have. One batch fills more than one 9x13."}, {"@type": "HowToStep", "text": "Sift the brown sugar and cinnamon together in a separate bowl."}, {"@type": "HowToStep", "text": "Turn the dough onto a floured surface and knead just to remove the extra air. Roll it out with a floured rolling pin to about 34 x 21 inches."}, {"@type": "HowToStep", "text": "Brush with the melted butter. Sprinkle the brown sugar and cinnamon all the way to the edges, then roll it up the long way."}, {"@type": "HowToStep", "text": "Cut into 2-inch rolls (or any size you like) using floss."}, {"@type": "HowToStep", "text": "Place the rolls in the pans with space between them so they have room to expand. Cover and let rise another 20 minutes (longer if frozen)."}, {"@type": "HowToStep", "text": "Heat the oven to 350°F."}, {"@type": "HowToStep", "text": "Icing: sift the powdered sugar into a bowl. In a separate bowl, beat the butter, cream cheese and vanilla until fluffy, then slowly mix in the powdered sugar. Add milk as needed to thin it."}, {"@type": "HowToStep", "text": "Uncover the rolls and bake 10 minutes, rotate the pans, and bake about 10 minutes more, until lightly brown."}, {"@type": "HowToStep", "text": "Slather on icing if you like."}], "recipeYield": "several pans", "author": {"@type": "Person", "name": "Guenevere"}}</script>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="./">&larr; All recipes</a>
+<h1>Guenevere's Cinnamon Rolls</h1>
+<div class="meta"><span>Serves <b>several pans</b></span><span>Prep <b>about 45 min</b></span><span>Cook <b>about 20 min</b></span><span>Total <b>about 3 hr (includes two rises plus a short third rise)</b></span></div>
+
+<div class="tools">
+  <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
+  <button class="btn" type="button" data-share-title="Guenevere&#x27;s Cinnamon Rolls">Share recipe</button>
+  <button class="btn" type="button" id="reset">Clear checks</button>
+</div>
+<div class="cols">
+  <div class="panel"><h2>Ingredients</h2><h3>Dough</h3><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>8 cups flour</span></label></li><li><label><input type="checkbox" data-i="1"><span>4 1/2 tsp instant dry yeast</span></label></li><li><label><input type="checkbox" data-i="2"><span>1/2 cup warm water</span></label></li><li><label><input type="checkbox" data-i="3"><span>2 tbsp sugar</span></label></li><li><label><input type="checkbox" data-i="4"><span>2 cups cold milk</span></label></li><li><label><input type="checkbox" data-i="5"><span>1 small package instant vanilla pudding</span></label></li><li><label><input type="checkbox" data-i="6"><span>2 sticks unsalted butter, room temperature, cut into small cubes</span></label></li><li><label><input type="checkbox" data-i="7"><span>2 eggs</span></label></li><li><label><input type="checkbox" data-i="8"><span>1 tsp salt</span></label></li><li><label><input type="checkbox" data-i="9"><span>Olive oil, for the bowl</span></label></li></ul><h3>Filling</h3><ul class="ing"><li><label><input type="checkbox" data-i="10"><span>2 cups brown sugar</span></label></li><li><label><input type="checkbox" data-i="11"><span>2 tbsp ground cinnamon</span></label></li><li><label><input type="checkbox" data-i="12"><span>1 stick butter, melted</span></label></li></ul><h3>Icing</h3><ul class="ing"><li><label><input type="checkbox" data-i="13"><span>1 stick unsalted butter, room temperature</span></label></li><li><label><input type="checkbox" data-i="14"><span>8 oz cream cheese, room temperature</span></label></li><li><label><input type="checkbox" data-i="15"><span>1 tsp vanilla extract</span></label></li><li><label><input type="checkbox" data-i="16"><span>3 cups powdered sugar</span></label></li><li><label><input type="checkbox" data-i="17"><span>3 tbsp milk (as needed)</span></label></li></ul></div>
+  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Sift the 8 cups flour into a bowl. Cut the 2 sticks of room-temperature butter into small cubes.</li><li>Yeast: stir the sugar into the warm water, add the yeast, and stir. Let it sit about 10 minutes.</li><li>In a big bowl or stand mixer, mix the cold milk and vanilla pudding.</li><li>Add the cubed butter, eggs and salt to the pudding and mix. Add the yeast mixture and mix.</li><li>If using a stand mixer, switch to the dough hook. Add the flour 1 cup at a time, mixing in each cup. After the 8th cup, knead by hand or mix on medium until the dough clears the sides of the bowl, about 3–4 minutes.</li><li>Form the dough into a ball. Coat the inside of a large bowl with olive oil, put the dough in, cover, and let it rise 1 hour or until doubled.</li><li>Punch down, cover, and let it rise again for 30 minutes.</li><li>Butter the pans: a 9x13 plus whatever smaller pans you have. One batch fills more than one 9x13.</li><li>Sift the brown sugar and cinnamon together in a separate bowl.</li><li>Turn the dough onto a floured surface and knead just to remove the extra air. Roll it out with a floured rolling pin to about 34 x 21 inches.</li><li>Brush with the melted butter. Sprinkle the brown sugar and cinnamon all the way to the edges, then roll it up the long way.</li><li>Cut into 2-inch rolls (or any size you like) using floss.</li><li>Place the rolls in the pans with space between them so they have room to expand. Cover and let rise another 20 minutes (longer if frozen).</li><li>Heat the oven to 350°F.</li><li>Icing: sift the powdered sugar into a bowl. In a separate bowl, beat the butter, cream cheese and vanilla until fluffy, then slowly mix in the powdered sugar. Add milk as needed to thin it.</li><li>Uncover the rolls and bake 10 minutes, rotate the pans, and bake about 10 minutes more, until lightly brown.</li><li>Slather on icing if you like.</li></ol></div>
+</div>
+<div class="extra panel"><h2>Family history</h2><ul><li>Guenevere likes to make these and give them out to friends, because if she leaves them in the house they're gone in a day or less.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>To freeze: after cutting, set the rolls on a pan and freeze just until hard, then store in a gallon Ziploc bag and take out as needed. Let them thaw and rise in a warm place, then bake as usual.</li><li>Cutting with unflavored floss gives clean rolls without squashing them.</li></ul></div>
+<div class="src">From: Guenevere</div>
+<script>
+(function(){
+var key='recipe:cinnamon-rolls';
+function load(){try{return JSON.parse(localStorage.getItem(key))||{}}catch(e){return {}}}
+function save(s){try{localStorage.setItem(key,JSON.stringify(s))}catch(e){}}
+var st=load();st.c=st.c||{};
+var boxes=document.querySelectorAll('ul.ing input');
+boxes.forEach(function(b){var i=b.dataset.i;if(st.c[i]){b.checked=true;b.closest('li').classList.add('done')}
+ b.addEventListener('change',function(){b.closest('li').classList.toggle('done',b.checked);if(b.checked)st.c[i]=1;else delete st.c[i];save(st)})});
+var steps=Array.prototype.slice.call(document.querySelectorAll('ol.steps li'));
+function mark(n){steps.forEach(function(li,j){li.classList.toggle('cur',j===n);li.classList.toggle('past',n!=null&&j<n)})}
+if(typeof st.s==='number')mark(st.s);
+steps.forEach(function(li,j){li.addEventListener('click',function(e){if(e.target.closest('a'))return;st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
+document.getElementById('reset').addEventListener('click',function(){st={c:{}};save(st);boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')});mark(null)});
+var wb=document.getElementById('wake'),lock=null;
+if('wakeLock' in navigator){wb.hidden=false;
+ wb.addEventListener('click',async function(){try{if(lock){await lock.release();lock=null;wb.classList.remove('on');wb.textContent='Keep screen on'}else{lock=await navigator.wakeLock.request('screen');wb.classList.add('on');wb.textContent='Screen stays on';lock.addEventListener('release',function(){lock=null;wb.classList.remove('on');wb.textContent='Keep screen on'})}}catch(e){toast('This device would not keep the screen on')}});
+ document.addEventListener('visibilitychange',async function(){if(document.visibilityState==='visible'&&wb.classList.contains('on')&&!lock){try{lock=await navigator.wakeLock.request('screen')}catch(e){}}});
+}
+})();
+</script>
+
+<footer>Williston Family Recipes · Family use only</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
+function copyLink(url){if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast('Link copied')},function(){prompt('Copy this link',url)})}else{prompt('Copy this link',url)}}
+function shareThis(title,url){url=url||(location.origin+location.pathname);if(navigator.share){navigator.share({title:title,url:url}).catch(function(e){if(!e||e.name!=='AbortError')copyLink(url)})}else{copyLink(url)}}
+document.querySelectorAll('[data-share-title]').forEach(function(b){b.addEventListener('click',function(){var u=b.getAttribute('data-share-url');shareThis(b.getAttribute('data-share-title'),u?new URL(u,location.href).href:null)})});
+</script>
+</body>
+</html>
