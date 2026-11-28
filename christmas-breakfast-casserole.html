@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Recipes">
 <meta name="theme-color" content="#b4532a">
-<title>Christmas Breakfast Casserole · Family Recipes</title>
+<title>Christmas Breakfast Casserole · Williston Family Recipes</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
@@ -24,7 +24,11 @@ h2{font-size:21px;margin:0 0 10px;font-weight:650}
 h3{font-size:16px;margin:16px 0 6px;color:var(--muted);font-weight:600;text-transform:none}
 .btn{font:inherit;font-size:16px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 .btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.search{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:6px 0 12px}
+.sbox{position:relative;margin:6px 0 12px}
+.search{width:100%;font:inherit;padding:12px 48px 12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:0;-webkit-appearance:none;appearance:none}
+.search::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
+.clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:var(--chip);color:var(--muted);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.clr[hidden]{display:none}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .chip{font:inherit;font-size:15px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -65,14 +69,14 @@ ol.steps li.past{color:var(--done)}
 footer{color:var(--muted);font-size:13px;margin-top:40px}
 @media print{.tools,.back,.btn{display:none}body{background:#fff;color:#000}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Christmas Breakfast Casserole", "recipeCategory": "Breakfast", "recipeCuisine": "American", "keywords": "casserole, holiday, Christmas, make-ahead, ham, sausage, family-favorite", "recipeIngredient": ["1 bag (2 lb) frozen hash browns", "1/2 cup butter, melted", "1/4 tsp pepper", "2 cans cream of chicken soup", "1/2 cup chopped onion", "1 cup grated sharp cheese, plus more for the top", "5 eggs, beaten", "3 cups chopped cooked ham OR 2 lb turkey sausage"], "recipeInstructions": [{"@type": "HowToStep", "text": "Spray a 9x13 casserole pan with cooking spray. Break up the hash browns into the pan."}, {"@type": "HowToStep", "text": "Mix all the other ingredients together and pour over the hash browns. Top with more shredded cheese."}, {"@type": "HowToStep", "text": "Bake at 350°F covered for about 40 minutes, then uncover and bake until the middle is hot."}, {"@type": "HowToStep", "text": "If baking straight from the refrigerator, it needs quite a bit longer."}], "recipeYield": "8", "author": {"@type": "Person", "name": "Family Tradition Tracker notebook (\"My Collection,\" rated 5 stars)"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Christmas Breakfast Casserole", "recipeCategory": "Breakfast", "recipeCuisine": "American", "keywords": "casserole, holiday, Christmas, make-ahead, ham, sausage, family-favorite", "recipeIngredient": ["1 bag (2 lb) frozen hash browns", "1/2 cup butter, melted", "1/4 tsp pepper", "2 cans cream of chicken soup", "1/2 cup chopped onion", "1 cup grated sharp cheese, plus more for the top", "5 eggs, beaten", "3 cups chopped cooked ham OR 2 lb turkey sausage, browned and drained", "Food thermometer (required)"], "recipeInstructions": [{"@type": "HowToStep", "text": "If using turkey sausage, brown it in a skillet first and drain it."}, {"@type": "HowToStep", "text": "Spray a 9x13 casserole pan with cooking spray. Break up the hash browns into the pan."}, {"@type": "HowToStep", "text": "Mix all the other ingredients together and pour over the hash browns. Top with more shredded cheese."}, {"@type": "HowToStep", "text": "Bake at 350°F covered for about 40 minutes."}, {"@type": "HowToStep", "text": "Uncover and keep baking until a thermometer in the center reads 160°F. Check the very middle, because that's the last part to heat through."}, {"@type": "HowToStep", "text": "If baking straight from the refrigerator, it needs quite a bit longer. Go by the thermometer, not the clock."}], "recipeYield": "8", "author": {"@type": "Person", "name": "Family Tradition Tracker notebook (Christmas section), recorded Nov 11, 2013; source listed as \"My Collection,\" rated 5 stars"}}</script>
 </head>
 <body>
 <div class="wrap">
 
 <a class="back" href="./">&larr; All recipes</a>
 <h1>Christmas Breakfast Casserole</h1>
-<div class="meta"><span>Serves <b>8</b></span><span>Prep <b>1 hr (as recorded)</b></span><span>Cook <b>45 min+ (see notes)</b></span><span>Total <b>about 1 hr 45 min</b></span></div>
+<div class="meta"><span>Serves <b>8</b></span><span>Prep <b>about 30 min (including browning the sausage)</b></span><span>Cook <b>45 min+ (until 160°F in the center)</b></span><span>Total <b>about 1 hr 30 min</b></span></div>
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
@@ -80,11 +84,11 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
-  <div class="panel"><h2>Ingredients</h2><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>1 bag (2 lb) frozen hash browns</span></label></li><li><label><input type="checkbox" data-i="1"><span>1/2 cup butter, melted</span></label></li><li><label><input type="checkbox" data-i="2"><span>1/4 tsp pepper</span></label></li><li><label><input type="checkbox" data-i="3"><span>2 cans cream of chicken soup</span></label></li><li><label><input type="checkbox" data-i="4"><span>1/2 cup chopped onion</span></label></li><li><label><input type="checkbox" data-i="5"><span>1 cup grated sharp cheese, plus more for the top</span></label></li><li><label><input type="checkbox" data-i="6"><span>5 eggs, beaten</span></label></li><li><label><input type="checkbox" data-i="7"><span>3 cups chopped cooked ham OR 2 lb turkey sausage</span></label></li></ul></div>
-  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Spray a 9x13 casserole pan with cooking spray. Break up the hash browns into the pan.</li><li>Mix all the other ingredients together and pour over the hash browns. Top with more shredded cheese.</li><li>Bake at 350°F covered for about 40 minutes, then uncover and bake until the middle is hot.</li><li>If baking straight from the refrigerator, it needs quite a bit longer.</li></ol></div>
+  <div class="panel"><h2>Ingredients</h2><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>1 bag (2 lb) frozen hash browns</span></label></li><li><label><input type="checkbox" data-i="1"><span>1/2 cup butter, melted</span></label></li><li><label><input type="checkbox" data-i="2"><span>1/4 tsp pepper</span></label></li><li><label><input type="checkbox" data-i="3"><span>2 cans cream of chicken soup</span></label></li><li><label><input type="checkbox" data-i="4"><span>1/2 cup chopped onion</span></label></li><li><label><input type="checkbox" data-i="5"><span>1 cup grated sharp cheese, plus more for the top</span></label></li><li><label><input type="checkbox" data-i="6"><span>5 eggs, beaten</span></label></li><li><label><input type="checkbox" data-i="7"><span>3 cups chopped cooked ham OR 2 lb turkey sausage, browned and drained</span></label></li><li><label><input type="checkbox" data-i="8"><span>Food thermometer (required)</span></label></li></ul></div>
+  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>If using turkey sausage, brown it in a skillet first and drain it.</li><li>Spray a 9x13 casserole pan with cooking spray. Break up the hash browns into the pan.</li><li>Mix all the other ingredients together and pour over the hash browns. Top with more shredded cheese.</li><li>Bake at 350°F covered for about 40 minutes.</li><li>Uncover and keep baking until a thermometer in the center reads 160°F. Check the very middle, because that's the last part to heat through.</li><li>If baking straight from the refrigerator, it needs quite a bit longer. Go by the thermometer, not the clock.</li></ol></div>
 </div>
-<div class="extra panel"><h2>Family history</h2><ul><li>A Christmas tradition. It's made almost every year.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li><span class="flag">Needs info: bake time.</span> The note says both "bake 45 min" and "40 min covered, then uncovered until the middle is hot." These are probably the same bake: about 40 covered plus some uncovered time. A center temperature of 160°F confirms the eggs are done.</li><li>The "cook straight from the refrigerator" note means it can be assembled the night before.</li><li><span class="flag">Needs info: whether the turkey sausage is browned first.</span> It almost certainly should be. Raw sausage won't reliably cook through in a casserole.</li><li><span class="flag">Needs info: amount of extra cheese for the topping.</span></li></ul></div>
-<div class="src">From: Family Tradition Tracker notebook ("My Collection," rated 5 stars)</div>
+<div class="extra panel"><h2>Family history</h2><ul><li>A Christmas tradition. It's made almost every year.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>The thermometer is required, not optional. Some of the ingredients go in frozen (the hash browns) and some don't, so the bake time is never the same twice. 160°F in the center means the eggs are done.</li><li>The "straight from the refrigerator" note means it can be assembled the night before.</li><li><span class="flag">Needs info: amount of extra cheese for the topping.</span></li></ul></div>
+<div class="src">From: Family Tradition Tracker notebook (Christmas section), recorded Nov 11, 2013; source listed as &quot;My Collection,&quot; rated 5 stars</div>
 <script>
 (function(){
 var key='recipe:christmas-breakfast-casserole';
@@ -97,7 +101,7 @@ boxes.forEach(function(b){var i=b.dataset.i;if(st.c[i]){b.checked=true;b.closest
 var steps=Array.prototype.slice.call(document.querySelectorAll('ol.steps li'));
 function mark(n){steps.forEach(function(li,j){li.classList.toggle('cur',j===n);li.classList.toggle('past',n!=null&&j<n)})}
 if(typeof st.s==='number')mark(st.s);
-steps.forEach(function(li,j){li.addEventListener('click',function(){st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
+steps.forEach(function(li,j){li.addEventListener('click',function(e){if(e.target.closest('a'))return;st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
 document.getElementById('reset').addEventListener('click',function(){st={c:{}};save(st);boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')});mark(null)});
 var wb=document.getElementById('wake'),lock=null;
 if('wakeLock' in navigator){wb.hidden=false;
@@ -107,7 +111,7 @@ if('wakeLock' in navigator){wb.hidden=false;
 })();
 </script>
 
-<footer>Family Recipes · Family use only</footer>
+<footer>Williston Family Recipes · Family use only</footer>
 </div>
 <div class="toast" id="toast" role="status"></div>
 <script>

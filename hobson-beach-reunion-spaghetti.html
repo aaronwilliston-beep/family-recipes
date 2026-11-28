@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Recipes">
 <meta name="theme-color" content="#b4532a">
-<title>Hobson Beach Reunion Spaghetti Sauce · Family Recipes</title>
+<title>Hobson Beach Reunion Spaghetti Sauce · Williston Family Recipes</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
@@ -24,7 +24,11 @@ h2{font-size:21px;margin:0 0 10px;font-weight:650}
 h3{font-size:16px;margin:16px 0 6px;color:var(--muted);font-weight:600;text-transform:none}
 .btn{font:inherit;font-size:16px;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 .btn.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.search{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:6px 0 12px}
+.sbox{position:relative;margin:6px 0 12px}
+.search{width:100%;font:inherit;padding:12px 48px 12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);margin:0;-webkit-appearance:none;appearance:none}
+.search::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none;display:none}
+.clr{position:absolute;right:6px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:var(--chip);color:var(--muted);font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+.clr[hidden]{display:none}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
 .chip{font:inherit;font-size:15px;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
 .chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -65,14 +69,14 @@ ol.steps li.past{color:var(--done)}
 footer{color:var(--muted);font-size:13px;margin-top:40px}
 @media print{.tools,.back,.btn{display:none}body{background:#fff;color:#000}}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Hobson Beach Reunion Spaghetti Sauce", "recipeCategory": "Main", "recipeCuisine": "Italian-American", "keywords": "pasta, beef, family-reunion, stovetop, family-favorite, crowd-pleaser", "recipeIngredient": ["1 clove fresh garlic", "1 tbsp olive oil", "1/2 lb ground beef, browned", "1 regular jar Prego", "1 can (8 oz) tomato sauce", "1 small can tomato paste", "Oregano, to taste", "Italian seasoning, to taste", "1/2 tbsp sugar", "1/4 cup water", "Spaghetti, for serving"], "recipeInstructions": [{"@type": "HowToStep", "text": "Press the garlic. Heat the olive oil in a skillet and cook the garlic until you can smell it."}, {"@type": "HowToStep", "text": "Add the browned ground beef, Prego, tomato sauce and tomato paste. Swirl the water in the cans and add it."}, {"@type": "HowToStep", "text": "Sprinkle in oregano and Italian seasoning to taste. Stir in the sugar."}, {"@type": "HowToStep", "text": "Simmer two hours, or until it's time to eat. Serve over spaghetti."}], "author": {"@type": "Person", "name": "First made at the 2001 Hobson Beach family reunion"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Recipe", "name": "Hobson Beach Reunion Spaghetti Sauce", "recipeCategory": "Main", "recipeCuisine": "Italian-American", "keywords": "pasta, beef, family-reunion, stovetop, family-favorite, crowd-pleaser", "recipeIngredient": ["1 clove fresh garlic", "1 tbsp olive oil", "1/2 lb ground beef, browned", "1 jar Prego (any normal-size jar), or any jarred spaghetti sauce", "1 can (8 oz) tomato sauce", "1 can (6 oz) tomato paste", "Oregano, to taste", "Italian seasoning, to taste", "1/2 tbsp sugar", "1/4 cup water", "1 package spaghetti noodles"], "recipeInstructions": [{"@type": "HowToStep", "text": "Press the garlic. Heat the olive oil in a skillet and cook the garlic until you can smell it."}, {"@type": "HowToStep", "text": "Add the browned ground beef, sauce, tomato sauce and tomato paste. Swirl the water in the cans and add it."}, {"@type": "HowToStep", "text": "Sprinkle in oregano and Italian seasoning to taste. Stir in the sugar."}, {"@type": "HowToStep", "text": "Simmer two hours, or until it's time to eat."}, {"@type": "HowToStep", "text": "Cook the spaghetti according to the package and serve the sauce over it."}], "recipeYield": "about 6", "author": {"@type": "Person", "name": "First made at the 2001 Hobson Beach family reunion"}}</script>
 </head>
 <body>
 <div class="wrap">
 
 <a class="back" href="./">&larr; All recipes</a>
 <h1>Hobson Beach Reunion Spaghetti Sauce</h1>
-<div class="meta"><span>Prep <b>10 min</b></span><span>Cook <b>about 2 hr simmer</b></span><span>Total <b>about 2 hr 10 min</b></span></div>
+<div class="meta"><span>Serves <b>about 6</b></span><span>Prep <b>10 min</b></span><span>Cook <b>about 2 hr simmer</b></span><span>Total <b>about 2 hr 10 min</b></span></div>
 
 <div class="tools">
   <button class="btn" id="wake" type="button" hidden>Keep screen on</button>
@@ -80,10 +84,10 @@ footer{color:var(--muted);font-size:13px;margin-top:40px}
   <button class="btn" type="button" id="reset">Clear checks</button>
 </div>
 <div class="cols">
-  <div class="panel"><h2>Ingredients</h2><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>1 clove fresh garlic</span></label></li><li><label><input type="checkbox" data-i="1"><span>1 tbsp olive oil</span></label></li><li><label><input type="checkbox" data-i="2"><span>1/2 lb ground beef, browned</span></label></li><li><label><input type="checkbox" data-i="3"><span>1 regular jar Prego</span></label></li><li><label><input type="checkbox" data-i="4"><span>1 can (8 oz) tomato sauce</span></label></li><li><label><input type="checkbox" data-i="5"><span>1 small can tomato paste</span></label></li><li><label><input type="checkbox" data-i="6"><span>Oregano, to taste</span></label></li><li><label><input type="checkbox" data-i="7"><span>Italian seasoning, to taste</span></label></li><li><label><input type="checkbox" data-i="8"><span>1/2 tbsp sugar</span></label></li><li><label><input type="checkbox" data-i="9"><span>1/4 cup water</span></label></li><li><label><input type="checkbox" data-i="10"><span>Spaghetti, for serving</span></label></li></ul></div>
-  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Press the garlic. Heat the olive oil in a skillet and cook the garlic until you can smell it.</li><li>Add the browned ground beef, Prego, tomato sauce and tomato paste. Swirl the water in the cans and add it.</li><li>Sprinkle in oregano and Italian seasoning to taste. Stir in the sugar.</li><li>Simmer two hours, or until it's time to eat. Serve over spaghetti.</li></ol></div>
+  <div class="panel"><h2>Ingredients</h2><ul class="ing"><li><label><input type="checkbox" data-i="0"><span>1 clove fresh garlic</span></label></li><li><label><input type="checkbox" data-i="1"><span>1 tbsp olive oil</span></label></li><li><label><input type="checkbox" data-i="2"><span>1/2 lb ground beef, browned</span></label></li><li><label><input type="checkbox" data-i="3"><span>1 jar Prego (any normal-size jar), or any jarred spaghetti sauce</span></label></li><li><label><input type="checkbox" data-i="4"><span>1 can (8 oz) tomato sauce</span></label></li><li><label><input type="checkbox" data-i="5"><span>1 can (6 oz) tomato paste</span></label></li><li><label><input type="checkbox" data-i="6"><span>Oregano, to taste</span></label></li><li><label><input type="checkbox" data-i="7"><span>Italian seasoning, to taste</span></label></li><li><label><input type="checkbox" data-i="8"><span>1/2 tbsp sugar</span></label></li><li><label><input type="checkbox" data-i="9"><span>1/4 cup water</span></label></li><li><label><input type="checkbox" data-i="10"><span>1 package spaghetti noodles</span></label></li></ul></div>
+  <div class="panel"><h2>Steps</h2><p style="margin:-4px 0 8px;font-size:14px;color:var(--muted)">Tap a step to mark where you are.</p><ol class="steps"><li>Press the garlic. Heat the olive oil in a skillet and cook the garlic until you can smell it.</li><li>Add the browned ground beef, sauce, tomato sauce and tomato paste. Swirl the water in the cans and add it.</li><li>Sprinkle in oregano and Italian seasoning to taste. Stir in the sugar.</li><li>Simmer two hours, or until it's time to eat.</li><li>Cook the spaghetti according to the package and serve the sauce over it.</li></ol></div>
 </div>
-<div class="extra panel"><h2>Family history</h2><ul><li>First made at the 2001 Hobson Beach reunion.</li><li>A regular in the household, and often requested whenever the family gets together.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li><span class="flag">Needs info: Prego jar size.</span> The standard jar is about 24 oz.</li><li><span class="flag">Needs info: tomato paste can size.</span> "Small" is usually 6 oz.</li><li><span class="flag">Needs info: how much spaghetti and how many servings.</span></li></ul></div>
+<div class="extra panel"><h2>Family history</h2><ul><li>First made at the 2001 Hobson Beach reunion.</li><li>A regular in the household, and often requested whenever the family gets together.</li></ul></div><div class="extra panel"><h2>Notes</h2><ul><li>Any normal-size jar of Prego works, and so does any other jarred sauce.</li><li>Serving count is a rough estimate (one package of noodles usually feeds about 6).</li></ul></div>
 <div class="src">From: First made at the 2001 Hobson Beach family reunion</div>
 <script>
 (function(){
@@ -97,7 +101,7 @@ boxes.forEach(function(b){var i=b.dataset.i;if(st.c[i]){b.checked=true;b.closest
 var steps=Array.prototype.slice.call(document.querySelectorAll('ol.steps li'));
 function mark(n){steps.forEach(function(li,j){li.classList.toggle('cur',j===n);li.classList.toggle('past',n!=null&&j<n)})}
 if(typeof st.s==='number')mark(st.s);
-steps.forEach(function(li,j){li.addEventListener('click',function(){st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
+steps.forEach(function(li,j){li.addEventListener('click',function(e){if(e.target.closest('a'))return;st.s=(st.s===j)?null:j;mark(st.s);save(st)})});
 document.getElementById('reset').addEventListener('click',function(){st={c:{}};save(st);boxes.forEach(function(b){b.checked=false;b.closest('li').classList.remove('done')});mark(null)});
 var wb=document.getElementById('wake'),lock=null;
 if('wakeLock' in navigator){wb.hidden=false;
@@ -107,7 +111,7 @@ if('wakeLock' in navigator){wb.hidden=false;
 })();
 </script>
 
-<footer>Family Recipes · Family use only</footer>
+<footer>Williston Family Recipes · Family use only</footer>
 </div>
 <div class="toast" id="toast" role="status"></div>
 <script>
